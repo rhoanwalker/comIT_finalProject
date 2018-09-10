@@ -116,6 +116,37 @@ public class RegistrationService {
 		return member;
 	}
 	
+	// update member registration
+	public void updateRegisteredMember(Member member) {
+		DBConnManagerUtil dbConnUtil = new DBConnManagerUtil();
+		
+		Connection conn = dbConnUtil.getConnection("jdbc:mysql://localhost:3306/buc_db", "javauser", "Java@Com1t");
+	
+		String sql = "UPDATE member SET first_name = ?, last_name = ?, date_of_birth = ?, gender = ?,"
+				+ "start_date = ?, email = ?, phone_no = ? WHERE member_id = ?";
+		
+		try {
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			
+			stmt.setString(1, member.getFirstname());
+			stmt.setString(2, member.getLastname());
+			stmt.setDate(3, new Date(member.getDob().getTime()));
+			stmt.setString(4, member.getGender());
+			stmt.setDate(5, new Date(member.getMemberStartDate().getTime()));
+			stmt.setString(6, member.getMemberEmail());
+			stmt.setString(7, member.getMemberPhoneNo());
+			stmt.setInt(8, member.getMemberID());
+						
+			stmt.execute();			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally {		
+			CloseConnection(conn);
+		}
+	}
+	
 
 	// method to close open connections
 	private void CloseConnection(Connection conn) {

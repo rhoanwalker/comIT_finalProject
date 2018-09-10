@@ -79,6 +79,7 @@
 					    <input type="text" class="form-control" id="postalCode">
 					  </div>
 					</div>
+					<input id="memberid" name="memberid" type="hidden" value="${member.memberID }">
 					<button type="submit" class="btn btn-primary">Update</button>
 				</form>
 			</div>
