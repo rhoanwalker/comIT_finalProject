@@ -1,0 +1,38 @@
+<nav class="navbar navbar-dark bg-dark">
+	<a class="navbar-brand" href="#">
+		<!--  x<img class="mb-4" alt="churh icon" src="../../images/church-icon.png" width=40px" height="40px"></img> -->
+		COGIC</a>
+	<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar01" aria-controls="navbar01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="navbar-collapse collapse" id="navbar01" style="">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="ddmAdministration" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administration</a>
+            <div class="dropdown-menu" aria-labelledby="ddmAdministration">
+              <a class="dropdown-item" href="#">Donations</a>
+              <a class="dropdown-item" href="/registration">Registration</a>
+              <a class="dropdown-item" href="#">Tax Receipts</a>           	
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="ddmMinistry" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ministries</a>
+            <div class="dropdown-menu" aria-labelledby="ddmMinistry">
+              <a class="dropdown-item" href="/uc">Men</a>
+              <a class="dropdown-item" href="#">Sunday School</a>
+              <a class="dropdown-item" href="#">Women</a>
+              <a class="dropdown-item" href="#">Youth</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+</nav>
