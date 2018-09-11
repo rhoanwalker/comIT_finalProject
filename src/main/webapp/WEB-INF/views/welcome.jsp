@@ -14,7 +14,7 @@
 		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 	      <header class="masthead mb-auto">
 	        <div class="inner">
-	        	<img class="mb-4" alt="churh icon" src="../../images/church-icon.png" width="200px" height="200px"></img>
+	        	<img class="mb-4" alt="churh icon" src="../../images/church_logo.jpg" width="200px" height="200px"></img>
 	          	<!-- <h3 class="masthead-brand">COGIC</h3> -->
 	        </div>
 	      </header>

@@ -16,6 +16,7 @@
 		      <th scope="col">Email</th>
 		      <th scope="col">Telephone</th>
 		      <th scope="col"></th>
+		      <th scope="col"></th>
 		    </tr>
 		  </thead>
 		  <c:forEach items="${members}" var="member">
@@ -28,9 +29,15 @@
 		      	<td><c:out value="${member.memberEmail}"/></td>
 		      	<td><c:out value="${member.memberPhoneNo}"/></td>
 		      	<td>
-		      		<form action="/updateregistration.do" method="get">
-		      			<input id="memberid" name="memberid" type="hidden" value="${member.memberID}">
+		      		<form action="/updateregistration" method="get">
+		      			<input id="memberidUpd" name="memberidUpd" type="hidden" value="${member.memberID}">
 		      			<button type="submit" class="btn btn-link">Update</button>
+		      		</form>
+		      	</td>
+		      	<td>
+		      		<form action="/deleteregistration" method="post">
+		      			<input id="memberidDel" name="memberidDel" type="hidden" value="${member.memberID}">
+		      			<button type="submit" class="btn btn-link">Delete</button>
 		      		</form>
 		      	</td>
 		    </tr>		    
@@ -41,7 +48,9 @@
 	
 	<!-- button link to add/register a member -->
 	<div>
+		<hr>
 		<button type="button" class="btn btn-link" data-toggle="modal" data-target="#registrationModal">Register Member</button>
+		<hr>
 	</div>
 	
 	<!-- Modal -->

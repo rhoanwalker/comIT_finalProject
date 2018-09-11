@@ -147,6 +147,29 @@ public class RegistrationService {
 		}
 	}
 	
+	// delete member by id
+	public void deleteMember(int memberId) {
+DBConnManagerUtil dbConnUtil = new DBConnManagerUtil();
+		
+		Connection conn = dbConnUtil.getConnection("jdbc:mysql://localhost:3306/buc_db", "javauser", "Java@Com1t");
+	
+		String sql = "DELETE FROM member WHERE member_id = ?";
+		
+		try {
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			
+			stmt.setInt(1, memberId);
+						
+			stmt.execute();			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally {		
+			CloseConnection(conn);
+		}
+	}
+	
 
 	// method to close open connections
 	private void CloseConnection(Connection conn) {

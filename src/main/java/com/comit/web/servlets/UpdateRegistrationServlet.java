@@ -15,7 +15,7 @@ import com.comit.web.classes.Member;
 import com.comit.web.services.RegistrationService;
 
 
-@WebServlet("/updateregistration.do")
+@WebServlet("/updateregistration")
 public class UpdateRegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private RegistrationService registrationService = new RegistrationService();
@@ -36,7 +36,7 @@ public class UpdateRegistrationServlet extends HttpServlet {
 		String strStartDate = request.getParameter("startDate");
 		
 		try {
-			int member_id = Integer.parseInt(request.getParameter("memberid"));
+			int member_id = Integer.parseInt(request.getParameter("memberidUpd"));
 			String firstname = request.getParameter("firstname");
 			String lastname = request.getParameter("lastname");
 			Date dob = sdf.parse(strDOB);

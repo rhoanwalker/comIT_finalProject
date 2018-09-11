@@ -27,7 +27,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>registration</servlet-name>
-    <url-pattern>/registration/*</url-pattern>
+    <url-pattern>/app/registration/*</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>uc</servlet-name>
@@ -43,7 +43,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>updateregistration</servlet-name>
-    <url-pattern>/updateregistration/*</url-pattern>
+    <url-pattern>/app/updateregistration/*</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>welcome</servlet-name>
@@ -53,4 +53,13 @@
     <servlet-name>welcome</servlet-name>
     <url-pattern>/welcome/*</url-pattern>
   </servlet-mapping>
+	
+	<filter>
+        <filter-name>loginFilter</filter-name>
+        <filter-class>com.comit.web.servlets.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/app/*</url-pattern>
+    </filter-mapping>
 </web-app>
