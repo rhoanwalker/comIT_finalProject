@@ -8,7 +8,7 @@
 		</div>
 		<div class="row mt-3">
 			<div class="mx-auto col-sm-7">
-				<form action="/updateregistration.do" method="post">
+				<form action="/updateregistration" method="post">
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label for="firstname">Firstname</label>

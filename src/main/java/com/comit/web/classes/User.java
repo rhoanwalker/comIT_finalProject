@@ -11,6 +11,8 @@ public class User {
 	private String lname;
 	private boolean isActive = true;
 	
+	public User() {}
+	
 	public User(int uid, int memberId, String uname, String pword, String utype, String fname, String lname, boolean isActive) {
 		this.uid = uid;
 		this.memberId = memberId;

@@ -1,75 +1,46 @@
 package com.comit.web.classes;
 
-import java.text.DateFormat;
 import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class TaxReceipt {
-	private int invID;
-	private int serialNo;
-	private Date issueDate;
-	private String name;
-	private String address;
+	private int memberId;
+	private String memberFName;
+	private String memberLName;
 	private Double amount;
 	private int taxYear;
-	private String signedBy;
 	
 	
-	public TaxReceipt(int invID, int serialNo, Date issueDate, String name, String address, Double amount, int taxYear,
-			String signedBy) {
+	public TaxReceipt(int memberId, String memberFName, String memberLName, Double amount, int taxYear) {
 
-		this.invID = invID;
-		this.serialNo = serialNo;
-		this.issueDate = issueDate;
-		this.name = name;
-		this.address = address;
+		this.memberId = memberId;
+		this.memberFName = memberFName;
+		this.memberLName = memberLName;
 		this.amount = amount;
 		this.taxYear = taxYear;
-		this.signedBy = signedBy;
 	}
 
-	public int getInvID() {
-		return invID;
+	public int getMemberId() {
+		return memberId;
 	}
 
-	public void setInvID(int invID) {
-		this.invID = invID;
+	public void setMemberId(int memberId) {
+		this.memberId = memberId;
 	}
 
-	public int getSerialNo() {
-		return serialNo;
+	public String getMemberFName() {
+		return memberFName;
 	}
 
-	public void setSerialNo(int serialNo) {
-		this.serialNo = serialNo;
+	public void setMemberFName(String memberFName) {
+		this.memberFName = memberFName;
 	}
 
-
-	public Date getIssueDate() {
-		return issueDate;
+	public String getMemberLName() {
+		return memberLName;
 	}
 
-
-	public void setIssueDate(Date issueDate) {
-		this.issueDate = issueDate;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
+	public void setMemberLName(String memberLName) {
+		this.memberLName = memberLName;
 	}
 
 	public Double getAmount() {
@@ -87,24 +58,10 @@ public class TaxReceipt {
 	public void setTaxYear(int taxYear) {
 		this.taxYear = taxYear;
 	}
-
-	public String getSignedBy() {
-		return signedBy;
-	}
-
-	public void setSignedBy(String signedBy) {
-		this.signedBy = signedBy;
-	}
 	
 	public String getFormattedAmount( ) {
 		DecimalFormat df = new DecimalFormat("#,###.00");
 		
 		return df.format(amount);
-	}
-	
-	public String getFormattedIssueDate() {
-		DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
-		
-		return df.format(issueDate);
 	}
 }

@@ -25,7 +25,7 @@ public class MemberLoginFilter implements Filter  {
             response.sendRedirect(request.getContextPath() + "/login.do"); // No logged-in user found, so redirect to login page.
         } else {
         	// verify if user logged in has administration privileges
-        	if (session.getAttribute("user.utype") != "MBR") {
+        	if (session.getAttribute("user.utype") == "MBR") {
         		response.sendRedirect(request.getContextPath() + "/home");
         	} else {
         		chain.doFilter(req, res); // user is a administrator.

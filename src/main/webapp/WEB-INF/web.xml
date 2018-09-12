@@ -38,20 +38,20 @@
     <url-pattern>/adm/registration/*</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>taxreceipt</servlet-name>
+    <servlet-class>com.comit.web.servlets.TaxReceiptServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>taxreceipt</servlet-name>
+    <url-pattern>/mbr/taxreceipt/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>uc</servlet-name>
     <jsp-file>/WEB-INF/views/underconstruction.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
     <servlet-name>uc</servlet-name>
     <url-pattern>/uc/*</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>taxreceipt</servlet-name>
-    <jsp-file>/WEB-INF/views/taxreceipt.jsp</jsp-file>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>taxreceipt</servlet-name>
-    <url-pattern>/taxreceipt/*</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>updateregistration</servlet-name>
@@ -70,19 +70,19 @@
     <url-pattern>/welcome/*</url-pattern>
   </servlet-mapping>
   <filter>
-    <filter-name>admLoginFilter</filter-name>
+    <filter-name>adminLoginFilter</filter-name>
     <filter-class>com.comit.web.servlets.AdminLoginFilter</filter-class>
   </filter>
   <filter-mapping>
-    <filter-name>admLoginFilter</filter-name>
-    <url-pattern>/adm/*</url-pattern>
+    <filter-name>adminLoginFilter</filter-name>
+    <url-pattern>/adm/</url-pattern>
   </filter-mapping>
   <filter>
-    <filter-name>mbrLoginFilter</filter-name>
+    <filter-name>memberLoginFilter</filter-name>
     <filter-class>com.comit.web.servlets.MemberLoginFilter</filter-class>
   </filter>
   <filter-mapping>
-    <filter-name>mbrLoginFilter</filter-name>
-    <url-pattern>/mbr/*</url-pattern>
+    <filter-name>memberLoginFilter</filter-name>
+    <url-pattern>/mbr/</url-pattern>
   </filter-mapping>
 </web-app>

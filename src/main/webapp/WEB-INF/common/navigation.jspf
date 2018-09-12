@@ -4,7 +4,7 @@
 	<div class="container">
 		<p align="right" class="mt-3">
 			Hi ${user.fname} ${user.lname}
-			<a href="/logout">Logout</a>
+			<a class="btn btn-default" data-toggle="confirmation" href="/logout">Logout</a>
 		</p>
 	</div>
 </c:if>
@@ -55,7 +55,9 @@
           <li class="nav-item dropdown">
           	<a class="nav-link dropdown-toggle" href="#" id="ddmMember" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Member</a>
             <div class="dropdown-menu" aria-labelledby="ddmMember">
-            	<a class="dropdown-item" href="/taxreceipt">Tax Receipt</a>
+            	<c:if test="${not empty user }">
+            		<a class="dropdown-item" href="/mbr/taxreceipt">Tax Receipt</a>            		
+            	</c:if>
 				<c:if test="${empty user }"><a class="dropdown-item" href="/login.do">Login</a></c:if>
 				<a class="dropdown-item" href="#">Sign Up</a>
             </div>

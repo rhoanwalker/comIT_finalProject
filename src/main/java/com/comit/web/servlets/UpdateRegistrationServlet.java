@@ -22,7 +22,7 @@ public class UpdateRegistrationServlet extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		int member_id = Integer.parseInt(request.getParameter("memberid"));
+		int member_id = Integer.parseInt(request.getParameter("memberidUpd"));
 		
 		request.setAttribute("member", registrationService.getMemberByMemberID(member_id));		
 		request.getRequestDispatcher("/WEB-INF/views/updateregistration.jsp").forward(request, response);
@@ -36,7 +36,7 @@ public class UpdateRegistrationServlet extends HttpServlet {
 		String strStartDate = request.getParameter("startDate");
 		
 		try {
-			int member_id = Integer.parseInt(request.getParameter("memberidUpd"));
+			int member_id = Integer.parseInt(request.getParameter("memberid"));
 			String firstname = request.getParameter("firstname");
 			String lastname = request.getParameter("lastname");
 			Date dob = sdf.parse(strDOB);

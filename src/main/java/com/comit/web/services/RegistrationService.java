@@ -51,7 +51,7 @@ public class RegistrationService {
 		List<Member> members = new ArrayList<Member>();
 		Connection conn = dbConnUtil.getConnection("jdbc:mysql://localhost:3306/buc_db", "javauser", "Java@Com1t");
 		
-		String sql = "SELECT * FROM member";
+		String sql = "SELECT * FROM member ORDER BY first_name, last_name";
 		
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
