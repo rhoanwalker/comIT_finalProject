@@ -34,8 +34,8 @@
 	          <li class="nav-item dropdown">
 	            <a class="nav-link dropdown-toggle" href="#" id="ddmAdministration" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administration</a>
 	            <div class="dropdown-menu" aria-labelledby="ddmAdministration">
-	              <a class="dropdown-item" href="#">Donations</a>
-	              <a class="dropdown-item" href="/registration">Registration</a>
+	              <a class="dropdown-item" href="/adm/donations">Donations</a>
+	              <a class="dropdown-item" href="/adm/registration">Registration</a>
 	              <a class="dropdown-item" href="#">Tax Receipts</a>           	
 	            </div>
 	          </li>
@@ -55,8 +55,9 @@
           <li class="nav-item dropdown">
           	<a class="nav-link dropdown-toggle" href="#" id="ddmMember" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Member</a>
             <div class="dropdown-menu" aria-labelledby="ddmMember">
-              <a class="dropdown-item" href="/login.do">Login</a>
-              <a class="dropdown-item" href="#">Sign Up</a>
+            	<a class="dropdown-item" href="/taxreceipt">Tax Receipt</a>
+				<c:if test="${empty user }"><a class="dropdown-item" href="/login.do">Login</a></c:if>
+				<a class="dropdown-item" href="#">Sign Up</a>
             </div>
           </li>
         </ul>

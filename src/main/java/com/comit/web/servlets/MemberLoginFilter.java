@@ -6,8 +6,8 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.*;
 
-@WebFilter("/app/*")
-public class LoginFilter implements Filter  {
+@WebFilter("/mbr/*")
+public class MemberLoginFilter implements Filter  {
 
     @Override
     public void init(FilterConfig config) throws ServletException {
@@ -22,9 +22,14 @@ public class LoginFilter implements Filter  {
         HttpSession session = request.getSession(false);
 
         if (session == null || session.getAttribute("user") == null) {
-            response.sendRedirect(request.getContextPath() + "/login"); // No logged-in user found, so redirect to login page.
+            response.sendRedirect(request.getContextPath() + "/login.do"); // No logged-in user found, so redirect to login page.
         } else {
-            chain.doFilter(req, res); // Logged-in user found, so just continue request.
+        	// verify if user logged in has administration privileges
+        	if (session.getAttribute("user.utype") != "MBR") {
+        		response.sendRedirect(request.getContextPath() + "/home");
+        	} else {
+        		chain.doFilter(req, res); // user is a administrator.
+        	}
         }
     }
 

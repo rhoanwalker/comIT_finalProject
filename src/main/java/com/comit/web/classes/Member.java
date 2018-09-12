@@ -33,6 +33,12 @@ public class Member extends Person {
 		this.memberEmail = memberEmail;
 		this.memberPhoneNo = memberPhoneNo;
 	}
+	
+	public Member(int memberID, String firstname, String lastname) {
+		super(firstname, lastname);
+		
+		this.memberID = memberID;
+	}
 
 	public int getMemberID() {
 		return memberID;

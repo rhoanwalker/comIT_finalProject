@@ -20,7 +20,8 @@
 	          <input type="checkbox" value="remember-me"> Remember me
 	        </label>
 	    </div>
-	    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+	    <button class="btn btn-lg btn-primary btn-link" type="submit">Sign in</button>
+	    <a class="btn btn-primary" href="/home" role="button">Cancel</a>
 		<c:if test="${not empty errMsg}">
 			<div class="alert alert-danger mt-3" role="alert">
 	 				${errMsg}

@@ -14,6 +14,14 @@
     <url-pattern>/about/*</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>donations</servlet-name>
+    <servlet-class>com.comit.web.servlets.DonationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>donations</servlet-name>
+    <url-pattern>/adm/donations/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>home</servlet-name>
     <jsp-file>/WEB-INF/views/home.jsp</jsp-file>
   </servlet>
@@ -27,7 +35,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>registration</servlet-name>
-    <url-pattern>/app/registration/*</url-pattern>
+    <url-pattern>/adm/registration/*</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>uc</servlet-name>
@@ -38,12 +46,20 @@
     <url-pattern>/uc/*</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>taxreceipt</servlet-name>
+    <jsp-file>/WEB-INF/views/taxreceipt.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>taxreceipt</servlet-name>
+    <url-pattern>/taxreceipt/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>updateregistration</servlet-name>
     <servlet-class>com.comit.web.servlets.UpdateRegistrationServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>updateregistration</servlet-name>
-    <url-pattern>/app/updateregistration/*</url-pattern>
+    <url-pattern>/adm/updateregistration/*</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>welcome</servlet-name>
@@ -53,13 +69,20 @@
     <servlet-name>welcome</servlet-name>
     <url-pattern>/welcome/*</url-pattern>
   </servlet-mapping>
-	
-	<filter>
-        <filter-name>loginFilter</filter-name>
-        <filter-class>com.comit.web.servlets.LoginFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>loginFilter</filter-name>
-        <url-pattern>/app/*</url-pattern>
-    </filter-mapping>
+  <filter>
+    <filter-name>admLoginFilter</filter-name>
+    <filter-class>com.comit.web.servlets.AdminLoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>admLoginFilter</filter-name>
+    <url-pattern>/adm/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>mbrLoginFilter</filter-name>
+    <filter-class>com.comit.web.servlets.MemberLoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>mbrLoginFilter</filter-name>
+    <url-pattern>/mbr/*</url-pattern>
+  </filter-mapping>
 </web-app>

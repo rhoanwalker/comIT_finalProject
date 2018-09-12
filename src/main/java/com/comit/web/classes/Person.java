@@ -16,6 +16,11 @@ public class Person {
 		this.dob = dob;
 		this.gender = gender;
 	}
+	
+	public Person(String firstname, String lastname) {
+		this.firstname = firstname;
+		this.lastname = lastname;
+	}
 
 	public String getFirstname() {
 		return firstname;
