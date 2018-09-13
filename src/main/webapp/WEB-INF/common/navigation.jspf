@@ -59,7 +59,7 @@
             		<a class="dropdown-item" href="/mbr/taxreceipt">Tax Receipt</a>            		
             	</c:if>
 				<c:if test="${empty user }"><a class="dropdown-item" href="/login.do">Login</a></c:if>
-				<a class="dropdown-item" href="#">Sign Up</a>
+				<!-- <a class="dropdown-item" href="#">Sign Up</a> -->
             </div>
           </li>
         </ul>
